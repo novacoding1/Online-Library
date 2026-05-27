@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
 import { useToast } from "../context/ToastContext.jsx";
-import { APP_NAME, demoCredentials } from "../lib/constants.js";
+import { APP_NAME } from "../lib/constants.js";
 import { Button } from "../components/ui/Button.jsx";
 import { FormField, inputClassName } from "../components/ui/FormField.jsx";
 import { ToastViewport } from "../components/ui/ToastViewport.jsx";
 
 export function LoginPage() {
-  const { login, user, isDemoMode } = useAuth();
+  const { login, user } = useAuth();
   const { showToast } = useToast();
   const navigate = useNavigate();
   const location = useLocation();
@@ -105,21 +105,7 @@ export function LoginPage() {
                 </Button>
               </form>
 
-              {isDemoMode ? (
-                <div className="mt-5 grid gap-2">
-                  {demoCredentials.map((credential) => (
-                    <button
-                      key={credential.email}
-                      type="button"
-                      onClick={() => setForm({ email: credential.email, password: credential.password })}
-                      className="flex items-center justify-between rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-left text-xs font-bold text-slate-600 transition hover:bg-white dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
-                    >
-                      <span>{credential.role}</span>
-                      <span>{credential.email}</span>
-                    </button>
-                  ))}
-                </div>
-              ) : null}
+
 
 
             </div>

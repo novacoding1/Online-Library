@@ -1,9 +1,5 @@
 import {
-  demoActivityLogs,
-  demoBooks,
   demoCategories,
-  demoIssues,
-  demoStudents,
   demoUsers,
 } from "../data/demoData.js";
 import { hasSupabaseConfig, supabase } from "../lib/supabase.js";
@@ -19,10 +15,10 @@ function seedDatabase() {
   return {
     users: demoUsers,
     categories: demoCategories,
-    books: demoBooks,
-    students: demoStudents,
-    issues: demoIssues,
-    activity_logs: demoActivityLogs,
+    books: [],
+    students: [],
+    issues: [],
+    activity_logs: [],
   };
 }
 

@@ -38,7 +38,6 @@ const navItems = [
   { label: "Студенттер", to: "/students", icon: Users },
   { label: "Тарих", to: "/history", icon: History },
   { label: "Аналитика", to: "/analytics", icon: BarChart3 },
-  { label: "Әкімшілік", to: "/admin", icon: ShieldCheck, roles: ["admin"] },
 ];
 
 function Sidebar({ open, onClose }) {

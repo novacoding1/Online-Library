@@ -4,7 +4,7 @@ import { Loader2 } from "lucide-react";
 import { AppLayout } from "./layouts/AppLayout.jsx";
 import { ProtectedRoute } from "./components/auth/ProtectedRoute.jsx";
 
-const AdminPage = lazy(() => import("./pages/AdminPage.jsx").then((module) => ({ default: module.AdminPage })));
+
 const AnalyticsPage = lazy(() => import("./pages/AnalyticsPage.jsx").then((module) => ({ default: module.AnalyticsPage })));
 const BooksPage = lazy(() => import("./pages/BooksPage.jsx").then((module) => ({ default: module.BooksPage })));
 const DashboardPage = lazy(() => import("./pages/DashboardPage.jsx").then((module) => ({ default: module.DashboardPage })));
@@ -48,14 +48,7 @@ export default function App() {
           <Route path="/students" element={<StudentsPage />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/analytics" element={<AnalyticsPage />} />
-          <Route
-            path="/admin"
-            element={
-              <ProtectedRoute roles={["admin"]}>
-                <AdminPage />
-              </ProtectedRoute>
-            }
-          />
+
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/settings" element={<SettingsPage />} />
         </Route>

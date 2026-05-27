@@ -44,10 +44,14 @@ function Sidebar({ open, onClose }) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const [prevPath, setPrevPath] = useState(location.pathname);
 
   useEffect(() => {
-    onClose();
-  }, [location.pathname, onClose]);
+    if (location.pathname !== prevPath) {
+      onClose();
+      setPrevPath(location.pathname);
+    }
+  }, [location.pathname, prevPath, onClose]);
 
   const sidebarContent = (
     <aside className="flex h-full w-72 flex-col border-r border-slate-200/70 bg-white/78 p-4 shadow-glass backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/78">

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { BookOpen, Lock, Mail, ShieldCheck } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
 import { useToast } from "../context/ToastContext.jsx";
 import { APP_NAME, demoCredentials } from "../lib/constants.js";
@@ -121,12 +121,7 @@ export function LoginPage() {
                 </div>
               ) : null}
 
-              <p className="mt-6 text-center text-sm text-slate-500 dark:text-slate-400">
-                Жаңа аккаунт па?{" "}
-                <Link to="/register" className="font-black text-library-cyan hover:text-cyan-700">
-                  Тіркелу
-                </Link>
-              </p>
+
             </div>
           </motion.div>
         </main>

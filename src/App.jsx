@@ -13,7 +13,7 @@ const IssueReturnPage = lazy(() => import("./pages/IssueReturnPage.jsx").then((m
 const LoginPage = lazy(() => import("./pages/LoginPage.jsx").then((module) => ({ default: module.LoginPage })));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage.jsx").then((module) => ({ default: module.NotFoundPage })));
 const ProfilePage = lazy(() => import("./pages/ProfilePage.jsx").then((module) => ({ default: module.ProfilePage })));
-const RegisterPage = lazy(() => import("./pages/RegisterPage.jsx").then((module) => ({ default: module.RegisterPage })));
+
 const ScannerPage = lazy(() => import("./pages/ScannerPage.jsx").then((module) => ({ default: module.ScannerPage })));
 const SettingsPage = lazy(() => import("./pages/SettingsPage.jsx").then((module) => ({ default: module.SettingsPage })));
 const StudentsPage = lazy(() => import("./pages/StudentsPage.jsx").then((module) => ({ default: module.StudentsPage })));
@@ -32,7 +32,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/register" element={<Navigate to="/login" replace />} />
 
         <Route
           element={
